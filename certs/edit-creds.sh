@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PATH=.;$PATH
+
 cert=`ls *-cert*`
 priv=`ls *-priv*`
 sed -z 's/\n/\\n/g;s/^/export CLIENT_CERTIFICATE_PEM=\"/;s/\(export CLIENT_CERT.*\)\\n$/\1\"\n/' $cert > cert.str
@@ -11,3 +13,7 @@ source secrets.txt
 cd ../amazon-freertos/demos/include
 envsubst <aws_clientcredential.h.in >aws_clientcredential.h
 envsubst <aws_clientcredential_keys.h.in >aws_clientcredential_keys.h
+
+cd -
+cd ../Socket/WiFi
+envsubst <socket_startup.c.in >socket_startup.c
