@@ -17,6 +17,15 @@
                 "panel": "dedicated"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "creds",
+            "type": "shell",
+            "command": "/home/studio/workspace/aws_mqtt_mutualauth_demo/certs/edit-creds.sh",
+            "options": {
+                "cwd": "/home/studio/workspace/aws_mqtt_mutualauth_demo/certs"
+            },
+            "problemMatcher": []
         }
     ]
 }
